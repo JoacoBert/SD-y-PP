@@ -2,11 +2,12 @@ package TP1_Ej2;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class ServerMultiple {
 
-    //private final Logger log = LoggerFactory.getLogger(Server.class);
+    private final Logger log = LoggerFactory.getLogger(ServerMultiple.class);
 
     public ServerMultiple(int port){
         
