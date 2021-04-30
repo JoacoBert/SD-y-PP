@@ -170,29 +170,18 @@ public class ServerHilo implements Runnable{
 
 	private void menuMessages() throws IOException {
 		canalSalida.println("1 -- Buzón de entrada");
-		canalSalida.println("2 -- Vaciar buzón de entrada");
-		canalSalida.println("3 -- Volver al menú anterior");
-		int option = leerOpcion(1, 3);
+		canalSalida.println("2 -- Volver al menú anterior");
+		int option = leerOpcion(1, 2);
 		switch (option) {
 		case 1:
 			listarMensajes();
 			break;
 		case 2:
-			eliminarMensajes();
-			break;
-		case 3:
 			menuUsuario();
 			break;
 		}
 	}
 
-	private void eliminarMensajes() throws IOException {
-		mailbox.eliminarMensaje(loggedUserId);
-		canalSalida.println("Mensajes eliminados");
-		canalSalida.println("-----------------------------------------------------------");
-		menuUsuario();
-	}
-	
 		
 	private void salir() {
 		try {
