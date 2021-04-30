@@ -1,4 +1,4 @@
-package TP1_EJ1;
+package TP1_Ej2;
 
 import static org.junit.Assert.assertTrue;
 

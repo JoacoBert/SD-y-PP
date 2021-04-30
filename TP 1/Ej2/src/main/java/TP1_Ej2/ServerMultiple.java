@@ -1,29 +1,31 @@
-package TP1_EJ1;
+package TP1_Ej2;
 import java.io.PrintWriter;
 import java.net.ServerSocket;
 import java.net.Socket;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
 
 
-public class Server {
-    private final Logger log = LoggerFactory.getLogger(Server.class);
+public class ServerMultiple {
 
-    public Server(int port){
+    //private final Logger log = LoggerFactory.getLogger(Server.class);
+
+    public ServerMultiple(int port){
         
   
         try{
             ServerSocket ss = new ServerSocket(port);
-            //System.out.println("Server has started on port "+port);
-            log.info("Server has started on port "+ port);
+            System.out.println("Server has started on port "+port);
+            
+            while(true){
+               
+                //log.info("Server has started on port "+ port);
             
 
                 Socket client = ss.accept();
               
                 PrintWriter canalSalida = new PrintWriter(client.getOutputStream(), true);
                 
-                //System.out.println("Atendiendo al cliente: "+client.getPort());
-                log.info("Atendiendo al cliente: "+client.getPort());
+                System.out.println("Atendiendo al cliente: "+client.getPort());
+                //log.info("Atendiendo al cliente: "+client.getPort());
 
               
                 canalSalida.println("|| ===================================================== ||");
@@ -31,18 +33,18 @@ public class Server {
                 canalSalida.println("|| ===================================================== ||");
                 canalSalida.println("Ingrese un mensaje y el mismo será reenviado");
 
-                ServerHilo sh = new ServerHilo(client);
+                ServerHilo2 sh = new ServerHilo2(client);
                 Thread serverThread = new Thread(sh);
                 serverThread.start();
                 
+            }
         }catch (Exception e){
             e.printStackTrace();
         }
     }
     public static void main( String[] args )
     {
-        String logName = Server.class.getSimpleName();
-        System.setProperty("log.name", logName);
-        Server server = new Server(9091);
+        
+        ServerMultiple server = new ServerMultiple(9090);
     } 
 }
