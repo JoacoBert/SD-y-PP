@@ -1,4 +1,4 @@
-package TP1_EJ5;
+package TP1_EJ6;
 
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
@@ -16,7 +16,7 @@ public class Server {
            
             RemoteInt basicService = (RemoteInt) UnicastRemoteObject.exportObject(sr, 6666);
             
-            serverRMI.rebind("WeatherServer", basicService);
+            serverRMI.rebind("VectorSumServer", basicService);
         }catch (Exception e){
             e.printStackTrace();
         }
