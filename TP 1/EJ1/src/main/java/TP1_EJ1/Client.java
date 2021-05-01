@@ -68,7 +68,7 @@ public class Client {
 
     public static void main(String args[]) throws UnknownHostException, IOException, InterruptedException {
 		Client client = new Client();
-        client.startConnection("127.0.0.1", 9091);
+        client.startConnection("127.0.0.1", 9090);
         client.sendMessage();
         client.stopConnection();
 

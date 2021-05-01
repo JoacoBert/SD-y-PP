@@ -43,6 +43,6 @@ public class Server {
     {
         String logName = Server.class.getSimpleName();
         System.setProperty("log.name", logName);
-        Server server = new Server(9091);
+        Server server = new Server(9090);
     } 
 }
