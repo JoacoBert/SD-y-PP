@@ -17,15 +17,13 @@ public class Server {
             RemoteInt basicService = (RemoteInt) UnicastRemoteObject.exportObject(sr, 6666);
             
             serverRMI.rebind("WeatherServer", basicService);
+
         }catch (Exception e){
             e.printStackTrace();
         }
 	}
         public static void main(String[] args)
         {
-
-            int port = 9090;
-            Server server = new Server(port);
-       
+            Server server = new Server(9090);
         }
 }

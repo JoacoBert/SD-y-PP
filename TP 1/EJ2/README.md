@@ -1,3 +1,4 @@
+## Consigna:
 * Escriba un servidor que, usando sockets, reciba un mensaje de texto y lo repita a su cliente. Programe también el  cliente para verificar y probar el comportamiento del servidor. Realice la implementación en TCP y comente los resultados.
 
 - Modifique el programa anterior para que pueda atender varios clientes a la vez.

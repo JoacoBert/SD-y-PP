@@ -17,12 +17,12 @@ public class Server {
             ServerSocket ss = new ServerSocket(port);
             System.out.println("Server has started on TCP port "+port);
             usuarios = Collections.synchronizedList(new ArrayList<String>());
-            while (true){
+            
                 Socket client = ss.accept();
                 ServerHilo sh = new ServerHilo(client, usuarios, mailbox);
                 Thread serverThread = new Thread(sh);
                 serverThread.start();
-            }
+            
         }catch (Exception e){
             e.printStackTrace();
         }

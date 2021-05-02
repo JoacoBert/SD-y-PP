@@ -6,7 +6,8 @@
 
   <groupId>TP1</groupId>
   <artifactId>EJ4</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
   <name>EJ4</name>
   <!-- FIXME change it to the project's website -->
@@ -51,6 +52,13 @@
         <plugin>
           <artifactId>maven-jar-plugin</artifactId>
           <version>3.0.2</version>
+          <configuration>
+              <archive>
+              <manifest>
+              <mainClass>TP1_EJ4.StartMailServer</mainClass>
+              </manifest>
+            </archive>
+          </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>

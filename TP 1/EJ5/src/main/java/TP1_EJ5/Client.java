@@ -30,7 +30,6 @@ public class Client {
     public static void main( String[] args )
     {
         // parametros de consola
-        int port = 9090;
-        Client client = new Client(port);
+        Client client = new Client(9090);
     }
 }

@@ -4,6 +4,6 @@ public class StartMailServer
 {
     public static void main( String[] args )
     {
-    	Server server = new Server(9095);
+    	Server server = new Server(9090);
     }
 }

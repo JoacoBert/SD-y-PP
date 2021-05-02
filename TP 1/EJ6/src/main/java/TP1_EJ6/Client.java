@@ -1,7 +1,11 @@
 package TP1_EJ6;
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.Random;
 import java.util.Scanner;
 
 import com.google.gson.Gson;
@@ -41,6 +45,8 @@ public class Client {
             System.out.println("Vector 1: " + v1);
             System.out.println("Vector 2: " + v2);
 
+            System.out.println("Se modifico 1 numero en cada vector");
+
             System.out.println("Vector Suma: " + vectorResultadoSuma);
             System.out.println("Vector Resta: " + vectorResultadoResta);
             
@@ -54,14 +60,13 @@ public class Client {
 
     public static int[] cargarVectores(int number){
 
-        Scanner teclado = new Scanner(System.in);
+        System.out.println("Se ingresaran 5 valores para el vector " + number);
 
-        System.out.println("Ingrese 5 valores para el vector " + number);
-
+        Random random = new Random();
         int[] v1 = new int[5];
 
         for (int i = 0; i < 5; i++) {
-            v1[i]=teclado.nextInt();
+            v1[i]= random.nextInt(100); 
         }
 
         return v1;

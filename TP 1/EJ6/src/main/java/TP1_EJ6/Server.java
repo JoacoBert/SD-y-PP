@@ -23,9 +23,6 @@ public class Server {
 	}
         public static void main(String[] args)
         {
-
-            int port = 9090;
-            Server server = new Server(port);
-       
+            Server server = new Server(9090);
         }
 }

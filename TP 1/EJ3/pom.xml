@@ -6,7 +6,8 @@
 
   <groupId>TP1</groupId>
   <artifactId>EJ3</artifactId>
-  <version>1.0-SNAPSHOT</version>
+  <version>0.0.1-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
   <name>EJ3</name>
   <!-- FIXME change it to the project's website -->
@@ -53,7 +54,7 @@
           <configuration>
 		    <archive>
 			  <manifest>
-				<mainClass>com.TrabajoPractico1_Ej3.app.App</mainClass>
+				<mainClass>TP1_EJ3.StartMailServer</mainClass>
 			  </manifest>
 			</archive>
 		</configuration>
