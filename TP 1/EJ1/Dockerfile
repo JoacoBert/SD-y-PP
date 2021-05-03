@@ -1,5 +1,5 @@
 FROM openjdk:latest
-COPY target/EJ1-0.0.1-SNAPSHOT.jar /usr/src/EJ1-0.0.1-SNAPSHOT.jar
+COPY target/EJ1-Client.jar /usr/src/EJ1-Client.jar
 WORKDIR /usr/src/
 EXPOSE 9090
-ENTRYPOINT ["java", "-jar", "EJ1-0.0.1-SNAPSHOT.jar"]
+ENTRYPOINT ["java", "-jar", "EJ1-Client.jar"]

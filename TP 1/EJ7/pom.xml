@@ -10,7 +10,6 @@
   <packaging>jar</packaging>
 
   <name>EJ7</name>
-  <description> Clase 1 - Base de POM XML</description>
 
   <parent>
     <groupId>org.springframework.boot</groupId>

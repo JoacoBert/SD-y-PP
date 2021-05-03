@@ -9,9 +9,9 @@ import java.rmi.registry.Registry;
 public class Client {
     Gson gson = new Gson();
 
-    public Client (int port){
+    public Client (int port, String ip){
         try{
-            Registry clientRMI = LocateRegistry.getRegistry("127.0.0.1", port);
+            Registry clientRMI = LocateRegistry.getRegistry(ip, port);
             String[] servicesList = clientRMI.list();
 
             for (String service : servicesList){
@@ -29,7 +29,10 @@ public class Client {
 
     public static void main( String[] args )
     {
-        // parametros de consola
-        Client client = new Client(9090);
+        int port = 9090;
+        String ip = "127.0.0.1";
+        if(args.length == 1)
+        	ip = args[0];
+        new Client(port, ip);
     }
 }

@@ -5,4 +5,4 @@
 * docker run -p 9090:9090/tcp -p 6666:6666 joaquinbert/tp1_ej5_server:latest 
 
 ## Cliente:
-* 
+* docker run joaquinbert/tp1_ej5_client:latest PRIVATE_IP

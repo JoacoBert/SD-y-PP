@@ -39,6 +39,8 @@ public class Client {
     public String sendMessage() throws IOException, InterruptedException {
     
             String mensajeAlServer = "";
+
+            BufferedReader tecla = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
             
             System.out.println("|| ===================================================== ||");
             System.out.println("||  Bienvenido al Servidor disponible en el puerto " + clientSocket.getPort()     + "  ||");
@@ -68,7 +70,11 @@ public class Client {
 
     public static void main(String args[]) throws UnknownHostException, IOException, InterruptedException {
 		Client client = new Client();
-        client.startConnection("127.0.0.1", 9090);
+        int port = 9090;
+        String ip = "127.0.0.1";
+        if(args.length == 1)
+        	ip = args[0];
+        client.startConnection(ip, port);
         client.sendMessage();
         client.stopConnection();
 

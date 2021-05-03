@@ -4,7 +4,7 @@
 - Modifique el programa anterior para que pueda atender varios clientes a la vez.
 
 ## Servidor:
-* docker run -p 9090:9090/tcp joaquinbert/tp1_ej1_server
+* docker run -p 9090:9090/tcp joaquinbert/tp1_ej2_server
 
 
 ## Cliente:

@@ -61,7 +61,7 @@
           <configuration>
             <archive>
             <manifest>
-            <mainClass>TP1_EJ1.Server</mainClass>
+            <mainClass>TP1_EJ1.Client</mainClass>
             </manifest>
           </archive>
         </configuration>
