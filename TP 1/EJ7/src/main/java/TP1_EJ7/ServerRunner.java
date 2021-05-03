@@ -1,12 +1,12 @@
 package TP1_EJ7;
 
+
 import java.rmi.Remote;
 import java.rmi.RemoteException;
 
 import org.json.JSONObject;
 
 import com.google.gson.Gson;
-import com.google.gson.JsonSyntaxException;
 
 public class ServerRunner implements RemoteInt, Remote{
 

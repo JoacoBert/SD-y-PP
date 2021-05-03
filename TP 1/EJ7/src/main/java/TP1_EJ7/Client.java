@@ -4,6 +4,7 @@ import java.io.IOException;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
 import java.rmi.registry.Registry;
+import java.util.Random;
 import java.util.Scanner;
 
 import org.json.JSONObject;
@@ -64,35 +65,35 @@ public class Client {
 
     private void menu(RemoteInt ri) throws IOException {
 		        
-        Scanner teclado = new Scanner(System.in);
+        Random r = new Random();
 
-        System.out.println("Bienvenido. Seleccione la tarea que desea realizar");
+        System.out.println("Bienvenido. Se seleccionará una de estas tarea al azar.");
 		System.out.println("1 -- Número aleatorio.");
 		System.out.println("2 -- Número primo.");
 		System.out.println("3 -- Valor de Pi.");
 		System.out.println("4 -- Fibonacci.");
 
-		int option = leerOpcion(1, 5);
+		int option = r.nextInt(4);
 		switch (option) {
-		case 1:
-            System.out.println("Ingrese el limite superior");
-            int max = teclado.nextInt();
-            Tarea tarea = new GenerarAleatorio(max);
+		case 0:
+            int limiteSuperior = r.nextInt(100);
+            System.out.println("Limite superior: " + limiteSuperior);
+            Tarea tarea = new GenerarAleatorio(limiteSuperior);
             System.out.println("Numero aleatorio generado "+sendTask(ri, tarea));
 			break;
-		case 2:
+		case 1:
             Tarea tarea2 = new GenerarNumeroPrimo();
             System.out.println("Numero primo aleatorio generado entre 1 y 1000: "+sendTask(ri, tarea2));
 			break;
-		case 3:
+		case 2:
             Tarea tarea3 = new CalcularPI();
             System.out.println("Pi: "+sendTask(ri, tarea3));
 			break;
-        case 4: 
-            System.out.println("Ingrese el numero que desea calcular");
-            int fibo = teclado.nextInt();
+        case 3: 
+           
+            int fibo = r.nextInt(25);
             Tarea tarea4 = new Fibonacci(fibo);
-            System.out.println("Resultado Fibonacci: "+sendTask(ri, tarea4));
+            System.out.println("Resultado Fibonacci de " + fibo + " : "+sendTask(ri, tarea4));
             break;  
 		}
 	}
